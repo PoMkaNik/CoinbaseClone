@@ -6,7 +6,200 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>Coinbase | Clone | Tailwindcss</title>
   </head>
-  <body>
-    <h1 class="bg-blue-500 text-white">hello!</h1>
+  <body class="font-sans bg-gray-100">
+    <!-- === === === -->
+    <!-- header  -->
+    <!-- === === === -->
+    <header>
+      <!-- === === === -->
+      <!-- top line -->
+      <!-- === === === -->
+      <div class="py-4 bg-blue-600">
+        <div class="container px-4 mx-auto">
+          <div class="flex items-end justify-between">
+            <!-- mobile menu icon -->
+            <button
+              onclick="toggleMobileNav();"
+              class="text-white focus:outline-none sm:hidden"
+            >
+              <svg
+                fill="none"
+                class="w-6 h-6"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+            <!-- != mobile menu icon -->
+            <!-- brand -->
+            <a href="#" class="block text-xl font-semibold text-white"
+              >coinbase</a
+            >
+            <!-- != brand -->
+            <!-- user profile -->
+            <a
+              href="#"
+              class="flex items-center space-x-1 text-sm font-semibold text-white hover:text-gray-400 text-opacity-70"
+            >
+              <!-- user avatar -->
+              <img
+                src="img/user-4.png"
+                alt="user-4"
+                class="block w-6 h-6 rounded-full"
+              />
+              <!-- != user avatar -->
+              <!-- collapsed on <md screens -->
+              <span class="hidden space-x-1 sm:flex sm:items-center">
+                <!-- user name -->
+                <span>John Doe</span>
+                <!-- != user name -->
+                <!-- dropdown icon -->
+                <svg
+                  fill="currentColor"
+                  class="block w-3 h-3 mt-1"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+                <!-- != dropdown icon -->
+              </span>
+              <!-- != collapsed on <md screens -->
+            </a>
+            <!-- != user profile -->
+          </div>
+        </div>
+      </div>
+      <!-- != top line -->
+
+      <!-- === === === -->
+      <!-- top menu on md+ -->
+      <!-- === === === -->
+      <div
+        class="hidden bg-blue-600 sm:border-b sm:block sm:bg-gray-50"
+        id="js--mobileNav"
+      >
+        <div class="container px-4 py-2 mx-auto sm:py-0">
+          <nav
+            class="flex flex-col items-start sm:-mb-px sm:space-x-6 sm:flex-row sm:items-center"
+          >
+            <!-- dashboard link-->
+            <a
+              href="#"
+              class="inline-flex items-center py-2 space-x-2 text-sm font-semibold text-white transition duration-150 border-b-2 border-transparent border-blue-600 sm:py-4 sm:text-blue-600"
+            >
+              <!-- icon -->
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 20 20">
+                <path
+                  d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zm0 6a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zm11-1a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"
+                />
+              </svg>
+              <!-- != icon -->
+              <!-- text -->
+              <span>Dashboard</span>
+              <!-- != text -->
+            </a>
+            <!-- != dashboard link -->
+            <!-- buy/sell link-->
+            <a
+              href="#"
+              class="inline-flex items-center py-2 space-x-2 text-sm font-semibold text-blue-400 transition duration-150 border-b-2 border-transparent sm:py-4 sm:text-gray-400 sm:hover:border-gray-400 hover:border-blue-400"
+            >
+              <!-- icon -->
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 20 20">
+                <path
+                  d="M8 5a1 1 0 100 2h5.586l-1.293 1.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L13.586 5H8zm4 10a1 1 0 100-2H6.414l1.293-1.293a1 1 0 10-1.414-1.414l-3 3a1 1 0 000 1.414l3 3a1 1 0 001.414-1.414L6.414 15H12z"
+                />
+              </svg>
+              <!-- != icon -->
+              <!-- text -->
+              <span>Buy/Sell</span>
+              <!-- != text -->
+            </a>
+            <!-- != buy/sell link -->
+            <!-- accounts link-->
+            <a
+              href="#"
+              class="inline-flex items-center py-2 space-x-2 text-sm font-semibold text-blue-400 transition duration-150 border-b-2 border-transparent sm:py-4 sm:text-gray-400 sm:hover:border-gray-400 hover:border-blue-400"
+            >
+              <!-- icon -->
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 20 20">
+                <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" />
+                <path
+                  fill-rule="evenodd"
+                  d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <!-- != icon -->
+              <!-- text -->
+              <span>Accounts</span>
+              <!-- != text -->
+            </a>
+            <!-- != accounts link -->
+            <!-- tools link-->
+            <a
+              href="#"
+              class="inline-flex items-center py-2 space-x-2 text-sm font-semibold text-blue-400 transition duration-150 border-b-2 border-transparent sm:py-4 sm:text-gray-400 sm:hover:border-gray-400 hover:border-blue-400"
+            >
+              <!-- icon -->
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
+                  clip-rule="evenodd"
+                />
+                <path
+                  d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15a24.98 24.98 0 01-8-1.308z"
+                />
+              </svg>
+              <!-- != icon -->
+              <!-- text -->
+              <span>Tools</span>
+              <!-- != text -->
+            </a>
+            <!-- != tools link -->
+            <!-- settings link-->
+            <a
+              href="#"
+              class="inline-flex items-center py-2 space-x-2 text-sm font-semibold text-blue-400 transition duration-150 border-b-2 border-transparent sm:py-4 sm:text-gray-400 sm:hover:border-gray-400 hover:border-blue-400"
+            >
+              <!-- icon -->
+              <svg fill="currentColor" class="w-6 h-6" viewBox="0 0 20 20">
+                <path
+                  fill-rule="evenodd"
+                  d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+              <!-- != icon -->
+              <!-- text -->
+              <span>Settings</span>
+              <!-- != text -->
+            </a>
+            <!-- != settings link -->
+          </nav>
+        </div>
+      </div>
+      <!-- != top menu on md+ -->
+    </header>
+    <!-- != header  -->
+
+    <!-- === === === -->
+    <!-- main content -->
+    <!-- === === === -->
+    <main></main>
+    <!-- custom js file -->
+    <script src="js/main.js"></script>
+    <!-- != custom js file -->
   </body>
 </html>
